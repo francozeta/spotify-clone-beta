@@ -3,7 +3,7 @@ import ListItem from "@/components/ListItem";
 
 export default function Home() {
   return (
-    <div 
+    <div
       className="
         bg-neutral-900 
         rounded-lg 
@@ -15,7 +15,7 @@ export default function Home() {
     >
       <Header>
         <div className="mb-2">
-          <h1 
+          <h1
             className="
               text-white
               text-3xl
