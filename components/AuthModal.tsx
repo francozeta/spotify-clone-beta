@@ -15,7 +15,7 @@ const AuthModal = () => {
   const { onClose, isOpen } = useAuthModal();
 
   useEffect(() => {
-    if(session) {
+    if (session) {
       router.refresh();
       onClose();
     }
@@ -55,4 +55,4 @@ const AuthModal = () => {
   )
 }
 
-export default AuthModal
+export default AuthModal;
