@@ -12,8 +12,8 @@ const getLikedSongs = async (): Promise<Song[]> => {
 
   } = await supabase.auth.getUser();
 
-  const { data, error } = await supabase.
-    from('liked_songs')
+  const { data, error } = await supabase
+    .from('liked_songs')
     .select('*, songs(*)')
     .eq('user_id', userData.user?.id) // Modified 
     .order('created_at', { ascending: false });
@@ -23,9 +23,9 @@ const getLikedSongs = async (): Promise<Song[]> => {
     return [];
   }
 
-  if(!data) return [];
+  if (!data) return [];
 
-  return data.map((item) =>({
+  return data.map((item) => ({
     ...item.songs
   }))
 }
