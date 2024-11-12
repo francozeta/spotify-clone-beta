@@ -4,13 +4,14 @@ import { usePathname } from "next/navigation"
 import { FC, useMemo } from "react"
 
 import { HiHome, } from 'react-icons/hi'
-import { BiSearch } from 'react-icons/bi'
+import { BiMicrophone, BiSearch } from 'react-icons/bi'
 import { Box } from "./Box"
 import Library from "./Library"
 import SidebarItem from "./SidebarItem"
 import { Song } from "@/types"
 import { twMerge } from "tailwind-merge"
 import usePlayer from "@/hooks/usePlayer"
+import { Mic } from 'lucide-react'
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -28,7 +29,7 @@ const Sidebar: FC<SidebarProps> = ({
     {
       icon: HiHome,
       label: 'Home',
-      active: pathname !== '/search',
+      active: pathname === '/',
       href: '/'
     },
     {
@@ -36,6 +37,12 @@ const Sidebar: FC<SidebarProps> = ({
       label: 'Search',
       active: pathname === '/search',
       href: '/search'
+    },
+    {
+      icon: BiMicrophone,
+      label: 'Recognition',
+      active: pathname === '/recognition',
+      href: '/recognition'
     }
   ], [pathname]);
 
